@@ -642,8 +642,8 @@ DisplayError HWDeviceDRM::PopulateDisplayAttributes(uint32_t index) {
     DLOGW("Driver doesn't report panel physical width and height - defaulting to 320dpi");
   }
 
-  display_attributes_[index].x_dpi = (FLOAT(mode.hdisplay) * 25.4f) / FLOAT(mm_width);
-  display_attributes_[index].y_dpi = (FLOAT(mode.vdisplay) * 25.4f) / FLOAT(mm_height);
+  display_attributes_[index].x_dpi = (FLOAT(mode.hdisplay) * 254.0f) / FLOAT(mm_width);
+  display_attributes_[index].y_dpi = (FLOAT(mode.vdisplay) * 254.0f) / FLOAT(mm_height);
   SetTopology(topology, &display_attributes_[index].topology);
 
   DLOGI("Display attributes[%d]: WxH: %dx%d, DPI: %fx%f, FPS: %d, LM_SPLIT: %d, V_BACK_PORCH: %d," \
